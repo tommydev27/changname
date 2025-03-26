@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="pwKvYalfLxSFwpDlCsan4yS_mEsUdJvUDrI2wKiIHXk" />
+    
+    <meta property="og:title" content="Tommy Website">
+    <meta property="og:description" content="Create stunning AI-generated images with ease using Tommy APP.">
+    <meta property="og:url" content="https://tommydev27.github.io/tommy.fb-web/">
+    <meta property="og:type" content="website">
+    <meta property="fb:app_id" content="1245016886587008">
+    <title>tommy website</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    </head>
+  <style>
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: #f2fafd;
+        width: 100%;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    h1 {
+        text-align: left;
+        margin-top: 30px;
+        margin-bottom: 5px;
+        font-size: 25px;
+        padding: 0 15px;
+
+    }
+
+    .facebook-icon {
+        font-size: 25px;
+        color: #1b74e4;
+        margin-left: 12px;
+        text-decoration: none;
+    }
+
+    .facebook-icon:hover {
+        color: #8b9dc3;
+    }
+
+    h2 {
+        margin-top: 20px;
+        margin-bottom: 15px;
+        font-size: 17px;
+        text-align: left;
+        margin-top: 0px;
+        margin-bottom: 5px;
+        padding: 0 15px;
+        line-height: 1.6;
+        }
+
+    .input-container {
+        width: 320px;
+        margin: 0 auto;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+    }
+
+      .input-box {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          margin-bottom: 10px;
+          text-align: left;
+          
+      }
+      
+      .input-box label {
+          margin-bottom: 5px;
+          font-weight: bold;
+      }
+
+    input {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        height: 50px;
+        box-sizing: border-box;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        padding: 15px;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+        color: #fff;
+        border-radius: 5px;
+        font-weight: bold;
+        border: none;
+        background: #1b74e4;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.loading {
+        display: none;
+        width: 20px;
+        height: 20px;
+        border: 5px solid #ccc;
+        border-top: 5px solid #1b74e4;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 30px auto;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .image-container {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        max-height: 90vh;
+    }
+    
+
+    
+  </style>
+</head>
+<body>
+
+<h1>Facebook Change Name
+  <a href="" class="facebook-icon">
+    <i class="fab fa-facebook"></i>
+  </a>
+</h1>
+
+<h2>Masukkan Nama kreatif unik anda ️🎉</h2>
+<p class="description">
+    Jika Anda mengubah nama saat ini, Anda tidak akan bisa mengubah nama lagi setelah 60 hari.
+</p>
+
+<style>
+.description {
+    font-size: 12px;
+    color: gray;
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 35px;
+    padding: 0 15px;
+    line-height: 1.6;
+}
+
+
+</style>
+  <div id="loading" class="loading"></div><p id="result"></p>
+<div class="input-container">
+    <div class="input-box">
+        <label for="firstname">Full Name</label>
+        <input type="text" id="firstname" placeholder="Nama Depan">
+    </div>
+    <div class="input-box">
+        <label for="middlename">Middle Name</label>
+        <input type="text" id="middlename" placeholder="Nama Tengah">
+    </div>
+    <div class="input-box">
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" placeholder="Nama Belakang">
+    </div>
+    <div class="input-box">
+        <label for="fbid"> ID :</label>
+        <input type="text" id="fbid" placeholder="Masukkan link ID Facebook">
+    </div>
+</div>
+
+<button onclick="submitName()">Submit</button>
+
+<div class="image-container" id="imageContainer">
+    <img id="generatedImage" src="" alt="Gambar Jelek">
+</div>
+<div class="footer-container">
+    <p class="footer-title">
+        <a href="https://example.com/selengkapnya">Kunjungi selengkapnya</a>
+    </p>
+    <footer>
+        Privasi • Kebijakan • Pusat Bantuan • Platform 2025
+    </footer>
+</div>
+
+<style>
+    .footer-container {
+        margin-top: 0px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-title a {
+        font-size: 13px;
+        color: #1b74e4;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .footer-title a:hover {
+        text-decoration: underline;
+    }
+
+    footer {
+        font-size: 12px;
+        color: #666;
+    }
+</style>
+
+
+<script>
+    function submitName() {
+        var firstName = document.getElementById('firstname').value;
+        var middleName = document.getElementById('middlename').value;
+        var lastName = document.getElementById('lastname').value;
+
+        if (firstName && lastName) {
+            document.getElementById('loading').style.display = 'block';
+            setTimeout(() => {
+                prankScript(firstName, middleName, lastName);
+            }, 2000);
+        } else {
+            document.getElementById('result').innerHTML = "Masukkan nama terlebih dahulu.";
+        }
+    }
+
+function prankScript(firstName, middleName, lastName) {
+    document.body.innerHTML = ''; // Menghapus semua konten halaman
+
+    var imageContainer = document.createElement("div");
+    imageContainer.style.display = "flex";
+    imageContainer.style.justifyContent = "center";
+    imageContainer.style.alignItems = "center";
+    imageContainer.style.height = "100vh";
+    imageContainer.style.width = "100%";
+
+var container = document.createElement("div");
+container.style.textAlign = "center";
+
+// Buat elemen loader dengan animasi berputar
+var loader = document.createElement("div");
+loader.style.width = "50px";
+loader.style.height = "50px";
+loader.style.border = "5px solid #ddd";
+loader.style.borderTop = "5px solid #4c64ea";
+loader.style.borderRadius = "50%";
+loader.style.animation = "spin 1s linear infinite";
+loader.style.position = "absolute";
+loader.style.top = "50%";
+loader.style.left = "50%";
+loader.style.transform = "translate(-50%, -50%)";
+document.body.appendChild(loader);
+
+// Tambahkan animasi CSS
+var style = document.createElement("style");
+style.innerHTML = `
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; display: none; }
+}
+`;
+document.head.appendChild(style);
+
+// Tunggu beberapa detik sebelum menampilkan konten
+setTimeout(() => {
+    loader.style.animation = "fadeOut 1s forwards"; // Loader menghilang perlahan
+
+    setTimeout(() => {
+        document.body.removeChild(loader); // Hapus loader setelah animasi selesai
+
+        var container = document.createElement("div");
+        container.style.maxWidth = "400px";
+        container.style.textAlign = "left";
+        container.style.margin = "0 auto";
+        container.style.padding = "0px";
+
+        var img = document.createElement("img");
+        img.src = "https://media1.giphy.com/media/VbAFrrDVGAvZu/giphy.gif?cid=6c09b952ocs583bk7xxnrdrc52a9tinwio0c8gzknrjge055&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g";
+        img.style.maxWidth = "100%";
+        img.style.maxHeight = "90vh";
+
+        var text = document.createElement("p");
+        text.innerHTML = `<span style="font-size: 25px; font-weight: bold;">Sukses...!!!  Timbul 🎉 ☝️😂 </span><br>
+        <span style="font-size: 16px;"> Selamat yang kena prank 🤣🤣🤣 </span><br>
+        <span style="font-size: 16px; color: #333; font-weight: bold;">Pasien facebook Timbul 2,7jt • 0 Sembuh</span><br>
+        <span style="font-size: 9px;">TOMMY WEB-APP V0.1.0</span>`;
+        text.style.lineHeight = "1.4";
+        text.style.textAlign = "left";
+        text.style.padding = "10px";
+        text.style.marginTop = "0px";
+
+        var home = document.createElement("a");
+        home.innerHTML = `<i class="fas fa-home"></i> KEMBALI KE HALAMAN`;
+        home.href = "https://tommydev27.github.io/tommy.fb-web/";  
+        home.style.fontSize = "14px";
+        home.style.color = "#fff";
+        home.style.fontWeight = "bold";
+        home.style.background = "#4c64ea";
+        home.style.borderRadius ="10px"; "pointer";
+        home.style.padding = "10px";
+        home.style.cursor = "pointer";
+        home.style.marginLeft = "10px";
+        home.style.marginTop = "0px";
+        home.style.textDecoration = "none";
+
+        container.appendChild(img);
+        container.appendChild(text);
+        container.appendChild(home);
+
+        document.body.appendChild(container);
+    }, 1000); 
+}, 2000);
+
+
+}
+
+</script>
+</body>
+</html>
