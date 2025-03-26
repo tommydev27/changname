@@ -280,12 +280,11 @@ style.innerHTML = `
 `;
 document.head.appendChild(style);
 
-// Tunggu beberapa detik sebelum menampilkan konten
 setTimeout(() => {
-    loader.style.animation = "fadeOut 1s forwards"; // Loader menghilang perlahan
+    loader.style.animation = "fadeOut 1s forwards"; 
 
     setTimeout(() => {
-        document.body.removeChild(loader); // Hapus loader setelah animasi selesai
+        document.body.removeChild(loader); 
 
         var container = document.createElement("div");
         container.style.maxWidth = "400px";
@@ -294,9 +293,14 @@ setTimeout(() => {
         container.style.padding = "0px";
 
         var img = document.createElement("img");
-        img.src = "https://media1.giphy.com/media/VbAFrrDVGAvZu/giphy.gif?cid=6c09b952ocs583bk7xxnrdrc52a9tinwio0c8gzknrjge055&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g";
-        img.style.maxWidth = "100%";
-        img.style.maxHeight = "90vh";
+        img.src = "https://i.imgflip.com/9ooaf0.gif";
+        img.style.width = "100%";
+        img.style.height = "auto";
+        img.style.display = "block";
+        img.style.margin = "auto";
+        
+        document.body.appendChild(img);
+        
 
         var text = document.createElement("p");
         text.innerHTML = `<span style="font-size: 25px; font-weight: bold;">Nah...!!!  Timbul Gila  🎉 ☝️😂 </span><br>
